@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3vh;
+}
+
+.auth {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logged {
+
+}
