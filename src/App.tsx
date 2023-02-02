@@ -14,10 +14,9 @@ interface UserInfo {
   rgb: RGB
 }
 
-const { connect, keyStores, WalletConnection, Contract } = nearAPI;
+const { connect, keyStores, WalletConnection, Contract, utils } = nearAPI;
 const myKeyStore = new keyStores.BrowserLocalStorageKeyStore();
 
-const YOCTO_NEAR = 24;
 const EXAMPLE_CONTRACT = 'frontend-test-1.badconfig.testnet';
 
 const connectionConfig = {
@@ -84,7 +83,7 @@ function App() {
   }
 
   const nearFormat = (amount: string) => {
-    return amount.slice(0, amount.length - YOCTO_NEAR) + '.' + amount.slice(-YOCTO_NEAR);
+    return utils.format.formatNearAmount(amount);
   }
 
   const onChangeColor = (position: keyof RGB, e: React.ChangeEvent<HTMLInputElement>) => {
